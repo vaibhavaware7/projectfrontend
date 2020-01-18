@@ -18,11 +18,12 @@
           </div> 
           <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Users</a></li>
-              <li><a href="#">Cases</a></li>
-              <li><a href="#">Add user</a></li>
-              <li><a href="#">Search</a></li>
-              <li><a href="#">Inbox</a></li>
+              <li class="active"><a routerLink="/admin">Home</a></li>
+              <li><a routerLink="/users">Users</a></li>
+              <li><a routerLink="/cases">Cases</a></li>
+              <li><a routerLink="/adduser">Add user</a></li>
+              <li><a routerLink="/search">Search</a></li>
+              <li><a routerLink="/admininbox">Inbox</a></li>
             </ul>
           </div>
 
@@ -56,3 +57,4 @@
       </footer>
 
 
+<router-outlet></router-outlet>

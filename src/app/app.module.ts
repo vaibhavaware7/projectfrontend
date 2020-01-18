@@ -8,9 +8,9 @@ import { NgModel, FormsModule,NgForm} from '@angular/forms'
 import { HttpClientModule} from '@angular/common/http';
 import { PolicehomeComponent } from './police/policehome/policehome.component'
 import { RouterModule } from '@angular/router';
-import { AuthService } from './auth.service';
+import { AuthService } from './auth.service'
 import { NgoComponent } from './ngo/ngo/ngo.component';
-import { AdminComponent } from './admin/admin.component';
+import { AdminComponent } from './admin/admin/admin.component';
 import { PolicregComponent } from './police/policreg/policreg.component';
 import { NgoregComponent } from './ngo/ngoreg/ngoreg.component';
 import { GalleryComponent } from './home/gallery/gallery.component';
@@ -21,6 +21,10 @@ import { RegcaseComponent } from './police/regcase/regcase.component';
 import { CasesComponent } from './police/cases/cases.component';
 import { SearchComponent } from './police/search/search.component';
 import { PoliceinboxComponent } from './police/policeinbox/policeinbox.component';
+import { NgoinboxComponent } from './ngo/ngoinbox/ngoinbox.component';
+import { UsersComponent } from './admin/users/users.component';
+import { AdduserComponent } from './admin/adduser/adduser.component';
+import { AdmininboxComponent } from './admin/admininbox/admininbox.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +41,11 @@ import { PoliceinboxComponent } from './police/policeinbox/policeinbox.component
     RegcaseComponent,
     CasesComponent,
     SearchComponent,
-    PoliceinboxComponent
+    PoliceinboxComponent,
+    NgoinboxComponent,
+    UsersComponent,
+    AdduserComponent,
+    AdmininboxComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +67,11 @@ import { PoliceinboxComponent } from './police/policeinbox/policeinbox.component
       {path:"regcase",component:RegcaseComponent},
       {path:"cases",component:CasesComponent},
       {path:"search",component:SearchComponent},
-      {path:"policeinbox",component:PoliceinboxComponent}
+      {path:"policeinbox",component:PoliceinboxComponent},
+      {path:"ngoinbox",component:NgoinboxComponent},
+      {path:"users",component:UsersComponent},
+      {path:"adduser",component:AdduserComponent},
+      {path:"admininbox",component:AdmininboxComponent}
     ])
     
   ],

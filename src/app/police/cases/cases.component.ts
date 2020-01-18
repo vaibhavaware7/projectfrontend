@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CasesComponent implements OnInit {
 
+  userlist={id:"",name:"",city:"",age:"",image:""}
   constructor() { }
 
   ngOnInit() {

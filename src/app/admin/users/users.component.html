@@ -1,20 +1,20 @@
-<h1>List Of Registered Cases</h1>
+<h1>List Of all Users</h1>
 <br>
 <div class="table-responsive">
     <table class="table">
       <tr>
           <th scope="col">Id</th>
           <th scope="col">Name</th>
-          <th scope="col">City</th>
-          <th scope="col">Age</th>
-          <th scope="col">Image</th> 
+          <th scope="col">Email</th>
+          <th scope="col">Phone</th>
+           <th scope="col">Image</th> 
       </tr>
       <tr *ngFor="let user of userlist">
         <td>{{user.id}}</td>
         <td>{{user.name}}</td>
-        <td>{{user.city}}</td>
-        <td>{{user.age}}</td>
-        <td>{{user.img}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.phone}}</td>
+        <td>{{user.image}}</td>
           </tr>
     </table>
     

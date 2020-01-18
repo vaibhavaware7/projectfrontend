@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-regcase',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegcaseComponent implements OnInit {
 
-  constructor() { }
+  name;age;height;bg;city;state;country;gendor;dob;missdate;compnum;
+  constructor(private router:Router) { }
 
   ngOnInit() {
   }
-
+  onRegister()
+  {
+    alert('Case registration Successfull ..');
+    this.router.navigate(['/police']);
+  }
 }
