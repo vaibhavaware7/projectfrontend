@@ -1,57 +1,70 @@
 <h1 style="text-align: center"> Case Registeration Form</h1>
 
 <div class="row" >
-  <div class="col-md-3"></div>
-  <div class="col-md-6">
-    <div class="form-group">
-      <label for="">Full Name</label>
-      <input [(ngModel)]="name" type="text" class="form-control">
-    </div>
-    <div class="form-group">
-      <label for="">Age</label>
-      <input [(ngModel)]="age" type="number" class="form-control">
-    </div>
-    <div class="form-group">
-      <label for="">Height(in feet)</label>
-      <input [(ngModel)]="height" type="text" class="form-control">
-    </div>
+  <div class="col-md-5">
+      <div class="form-group">
+          <label for="">Full Name</label>
+          <input [(ngModel)]="victim.name" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Age</label>
+          <input [(ngModel)]="victim.age" type="number" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">Gender  </label>
+            <br>
+             <input type="radio" value="Male" [(ngModel)]="victim.gendor"> Male 
+             <input type="radio" value="Female"[(ngModel)]="victim.gendor"> Female
+               <input type="radio" value="Other"[(ngModel)]="victim.gendor"> Other
+            
+         </div>
+        <div class="form-group">
+              <label for="">Height(in feet)</label>
+              <input [(ngModel)]="victim.height" type="text" class="form-control">
+       </div>
+       <div class="form-group">
+          <label for="">Blood Group</label>
+          <input [(ngModel)]="victim.bgrp" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Date Of Birth(yyyy-MM-dd)</label>
+          <input [(ngModel)]="victim.dob" type="text" class="form-control">
+        </div>
+        
+      </div>
+  <div class="col-md-4">
     <div class="form-group">
       <label for="">City</label>
-      <input [(ngModel)]="city" type="text" class="form-control">
+      <input [(ngModel)]="address.city" type="text" class="form-control">
     </div>
     <div class="form-group">
       <label for="">State</label>
-      <input [(ngModel)]="state" type="text" class="form-control" >
+      <input [(ngModel)]="address.state" type="text" class="form-control" >
     </div>
 
     <div class="form-group">
         <label for="">Country</label>
-        <input [(ngModel)]="country" type="text" class="form-control">
+        <input [(ngModel)]="address.country" type="text" class="form-control">
       </div>
-    <div class="form-group">
-        <label for="">Blood Group</label>
-        <input [(ngModel)]="bg" type="text" class="form-control">
-      </div>
-      <div class="form-group">
-        <label for="">Gendor</label>
-        <input type="radio" value="Male" [(ngModel)]="gendor">Male 
-        <input type="radio" value="Female"[(ngModel)]="gendor">Female
+   <div class="form-group">
+        <label for="">Phone number of missing person</label>
+        <input [(ngModel)]="address.phoneno" type="text" class="form-control">
       </div>
       <div class="form-group">
-        <label for="">Date Of Birth(yyyy-MM-dd)</label>
-        <input [(ngModel)]="dob" type="text" class="form-control">
-      </div>
-      <div class="form-group">
-        <label for="">Missing Date(yyyy-MM-dd)</label>
-        <input [(ngModel)]="missdate" type="text" class="form-control">
-      </div>
-      
-      <div class="form-group">
-        <label for="">Complainant Number</label>
-        <input [(ngModel)]="compnum" type="text" class="form-control">
-      </div>
-    <div class="form-group" style="text-align: center;">
-        <button (click)="onRegister()" class="btn btn-success">Register</button>
-    </div>
-  </div>
+          <label for="">Missing Date(yyyy-MM-dd)</label>
+          <input [(ngModel)]="victim.missingDate" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">Complainant number</label>
+            <input [(ngModel)]="victim.complainantNo" type="text" class="form-control">
+          </div>
+   </div>
 </div>
+<div class="row">
+  <div class="col-md-9">
+  <div class="form-group" style="text-align: center;">
+    <button (click)="onRegister()" class="btn btn-success">Register</button>
+</div>
+</div>
+</div>
+

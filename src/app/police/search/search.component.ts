@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PoliceService } from 'src/app/police.service';
 
 @Component({
   selector: 'app-search',
@@ -7,14 +8,23 @@ import { Router } from '@angular/router';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+  map:any;
+  username="";
+  constructor(private router:Router,private service:PoliceService) { }
 
-  constructor(private router:Router) { }
-
-  ngOnInit() {
+  ngOnInit()
+  {
+    var element=document.getElementById("myDiv");
+    element.style.visibility="hidden";
   }
   onSearch()
   {
-    alert('functionality to be added')
-    this.router.navigate(['/search']);
+    debugger;
+    document.getElementById("myDiv").style.visibility="visible"
+     let obervableResult= this.service.GetCaseByName(this.username);
+     obervableResult.subscribe((result)=>{
+       console.log(result);
+       this.map=result;
+     })
   }
 }

@@ -19,11 +19,11 @@
           </div> 
           <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-              <li class="active"><a routerLink="/police">Home</a></li>
-              <li><a  routerLink="/regcase">Register Case</a></li>
-              <li><a  routerLink="/cases">Cases</a></li>
-              <li><a  routerLink="/search">Search</a></li>
-              <li><a  routerLink="/policeinbox">Inbox</a></li>
+              <li class="active"><a routerLink="/policehome/police">Home</a></li>
+              <li><a  routerLink="/policehome/regcase">Register Case</a></li>
+              <li><a  routerLink="/policehome/cases">Cases</a></li>
+              <li><a  routerLink="/policehome/search">Search</a></li>
+              <li><a  routerLink="/policehome/inbox">Inbox</a></li>
             </ul>
           </div>
 
@@ -38,22 +38,14 @@
               <h2>News</h2>
               <p> Contents to be added... </p>
               </div>
-          </div>
+           </div>
           <div class="col-md-8 text-left"> 
-            
-            <div class="jumbotron">
-              <div class="container">
-                <h1>Welcome to Police Home</h1>
-                <p style="text-align: justify;"> This portal is help to manage human anti-trafficking
-                    cases for police and releated NGO's.  </p>
-                  <h3 style="font-weight: 600;"> What is Human Trafficking ?</h3>
-                  <p> ...static data...</p>
-              </div>
-            </div>
-            
-      
+                <router-outlet></router-outlet>
+          </div>
+    <div class="col-md-12">   
       <footer class="container-fluid text-center">
         <p>This portal is developed for CDAC project by Vaibhav Aware</p>
       </footer>
+    </div>
 
 

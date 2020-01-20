@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PoliceService } from 'src/app/police.service';
 
 @Component({
   selector: 'app-cases',
@@ -7,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CasesComponent implements OnInit {
 
-  userlist={id:"",name:"",city:"",age:"",image:""}
-  constructor() { }
+  map:any
+  
+  constructor(private service:PoliceService) { }
 
-  ngOnInit() {
+  ngOnInit() 
+  {
+     let observableResult=this.service.GetAllCases();
+     observableResult.subscribe((result)=>{
+       console.log(result);
+        this.map= result; 
+      })
+    
   }
 
 }

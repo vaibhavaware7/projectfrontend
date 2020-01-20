@@ -25,6 +25,7 @@ import { NgoinboxComponent } from './ngo/ngoinbox/ngoinbox.component';
 import { UsersComponent } from './admin/users/users.component';
 import { AdduserComponent } from './admin/adduser/adduser.component';
 import { AdmininboxComponent } from './admin/admininbox/admininbox.component';
+import { PoliceComponent } from './police/police/police.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +46,8 @@ import { AdmininboxComponent } from './admin/admininbox/admininbox.component';
     NgoinboxComponent,
     UsersComponent,
     AdduserComponent,
-    AdmininboxComponent
+    AdmininboxComponent,
+    PoliceComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +57,7 @@ import { AdmininboxComponent } from './admin/admininbox/admininbox.component';
     RouterModule.forRoot([
       {path:"",component:HomeComponent},
       {path:"home",component:HomeComponent},
-      {path:"police",component:PolicehomeComponent},
+      {path:"policehome",component:PolicehomeComponent},
       {path:"ngo",component:NgoComponent},
       {path:"admin",component:AdminComponent},
       {path:"policereg",component:PolicregComponent},
@@ -64,10 +66,21 @@ import { AdmininboxComponent } from './admin/admininbox/admininbox.component';
       {path:"stat",component:StatComponent},
       {path:"org",component:OrgComponent},
       {path:"about",component:AboutusComponent},
-      {path:"regcase",component:RegcaseComponent},
-      {path:"cases",component:CasesComponent},
-      {path:"search",component:SearchComponent},
-      {path:"policeinbox",component:PoliceinboxComponent},
+      {
+        path:'policehome',component:PolicehomeComponent,children:[{path:'police',component:PoliceComponent}]  
+      },
+      {
+        path:'policehome',component:PolicehomeComponent,children:[{path:'regcase',component:RegcaseComponent}]  
+      },
+      {
+        path:'policehome',component:PolicehomeComponent,children:[{path:'cases',component:CasesComponent}]  
+      },
+      {
+        path:'policehome',component:PolicehomeComponent,children:[{path:'search',component:SearchComponent}]  
+      }, 
+      {
+        path:'policehome',component:PolicehomeComponent,children:[{path:'inbox',component:PoliceinboxComponent}]  
+      },
       {path:"ngoinbox",component:NgoinboxComponent},
       {path:"users",component:UsersComponent},
       {path:"adduser",component:AdduserComponent},

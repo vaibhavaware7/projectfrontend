@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PoliceService } from 'src/app/police.service';
 
 @Component({
   selector: 'app-regcase',
@@ -8,14 +9,29 @@ import { Router } from '@angular/router';
 })
 export class RegcaseComponent implements OnInit {
 
-  name;age;height;bg;city;state;country;gendor;dob;missdate;compnum;
-  constructor(private router:Router) { }
+  victim={name:"",age:"",gendor:"",height:"",bgrp:"",dob:"",missingDate:"",complainantNo:""}
+  address={city:"",state:"",country:"",phoneno:""}
+  constructor(private router:Router,private service:PoliceService) { }
 
-  ngOnInit() {
+  ngOnInit() 
+  {
   }
   onRegister()
   {
-    alert('Case registration Successfull ..');
-    this.router.navigate(['/police']);
+   let observableResult= this.service.FileComplaint(this.victim,this.address);
+   debugger;  
+    observableResult.subscribe((result)=>{
+      if(result==true)
+      {
+        alert('Case Registered Successfully ...')
+        this.router.navigate(['/policehome/police'])
+      }
+      else
+      {
+        alert('Case Registration Falied')
+        this.router.navigate(['/policehome/regcase'])
+        
+      }
+    })
   }
 }

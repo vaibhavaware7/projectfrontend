@@ -17,7 +17,7 @@ export class PolicregComponent implements OnInit
 
   onRegister()
   {
-    alert('Your registration request has been generated . You account will be activated within a day. Thank You');
+    alert('Your registration request has been generated . You account will be activated within 48 hours. Thank You');
     this.router.navigate(['/home']);
   }
 }

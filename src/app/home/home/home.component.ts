@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth.service';
 import { Router } from '@angular/router';
+import { isNull } from 'util';
 
 @Component({
   selector: 'app-home',
@@ -8,13 +9,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-
-
-    email;
-    password;
-
-  message;
+  
+  user={email:"",password:""}
+   message="";
+   emp:any;
   constructor(private authService:AuthService,
     private router: Router) { }
   ngOnInit() {
@@ -22,52 +20,44 @@ export class HomeComponent implements OnInit {
 
   SignIn() {
     debugger;
-   // let dbuser = this.authService. CheckCredentialsWithDB(this.user);
-   if (this.email.length == 0) 
-   {
-    alert('enter email');
-    }
-   else if (this.password.length ==0)
-    {
-     alert('enter password');
-    } 
-    else {
-  
-    if(this.email=='Admin')
-    {
-        sessionStorage['login_status'] = '1';
-        localStorage.setItem('email',this.email);
-        localStorage.setItem('flag','true');
-        this.router.navigate(['/admin']);
-    }
-    else if(this.email=='Police')
-    {
-      
-        sessionStorage['login_status'] = '1';
-        localStorage.setItem('email',this.email);
-        localStorage.setItem('flag','true');
-        this.router.navigate(['/police']);
-    }else if(this.email=='Ngo')
-    {
-        sessionStorage['login_status'] = '1';
-        localStorage.setItem('email',this.email);
-        localStorage.setItem('flag','true');
-        this.router.navigate(['/ngo']);
-    }else{
-      alert("invalid login");
+     this.emp= this.authService. CheckCredentialsWithDB(this.user);
       this.router.navigate(['']);
-      this.message="invalid login please retry";
-    }
-    }
+  
   }
 
+  checkResponse()
+  {
+     var res =window.confirm("Before proceeding to registration "+ 
+    "page make sure you are a valid police employee."+
+    " After registration our team will verify if entered details belong to offical employee serving mentioned "+
+    "police department. "+" If found any invalid information, your data will be sent to cyber security department and proper action will be taken against you."+
+    " Press OK if you agree terms or Cancel if you dont want to proceed further.")
+
+    if(res== true)
+    {
+     this.RegisterAsPolice();
+    }
+    
+  }
   RegisterAsPolice()
    {
     console.log("inside police register");
 
     this.router.navigate(['/policereg']);
   }
+  checkResponseNgo()
+  {
+    var res =window.confirm("Before proceeding to registration "+ 
+    "page make sure you are working for registered NGO realted to Human Trafficking Victims."+
+    " After registration our team will verify if entered details belong to offical employee serving mentioned "+
+    "NGO . "+" If found any invalid information, your data will be sent to cyber security department and proper action will be taken against you."+
+    " Press OK if you agree terms or Cancel if you dont want to proceed further.")
 
+    if(res== true)
+    {
+     this.RegisterAsNgo();
+    }
+  }
   RegisterAsNgo()
    {
     console.log("inside ngo register");

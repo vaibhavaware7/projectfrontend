@@ -5,16 +5,16 @@
       <tr>
           <th scope="col">Id</th>
           <th scope="col">Name</th>
-          <th scope="col">City</th>
+          <th scope="col">Date Of Birth</th>
           <th scope="col">Age</th>
           <th scope="col">Image</th> 
       </tr>
-      <tr *ngFor="let user of userlist">
-        <td>{{user.id}}</td>
-        <td>{{user.name}}</td>
-        <td>{{user.city}}</td>
-        <td>{{user.age}}</td>
-        <td>{{user.img}}</td>
+      <tr *ngFor="let m of map">
+        <td>{{m.appNo}}</td>
+        <td>{{m.name}}</td>
+        <td>{{m.dob}}</td>
+        <td>{{m.age}}</td>
+        <td>{{m.img}}</td>
           </tr>
     </table>
     

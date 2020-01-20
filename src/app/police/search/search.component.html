@@ -1,5 +1,28 @@
 <h1>Search Missing Victim</h1>
 <div class="form-group">
-    <input type="text" class="form-control" placeholder="Search Victim By Name">
+    <label for="Email" >UserName</label>
+    <input type="text" class="form-control" id="username" name="username" placeholder="enter name"
+    [(ngModel)]="username" required    >
+</div>
+  <button type="button" (click)="onSearch()" class="btn btn-primary">Search By Name</button>
+<br>
+     <div class="table-responsive" id="myDiv">
+    <table class="table">
+      <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Date Of Birth</th>
+          <th scope="col">Age</th>
+          <th scope="col">Image</th> 
+      </tr>
+    <tr>
+        <td>{{map.appNo}}</td>
+        <td>{{map.name}}</td>
+        <td>{{map.dob}}</td>
+        <td>{{map.age}}</td>
+        <td>{{map.img}}</td>
+      
+          </tr>
+     </table>
+    
   </div>
-  <button type="button" (click)="onSearch()" class="btn btn-default">Search By Name</button>

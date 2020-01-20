@@ -15,6 +15,7 @@
 </div>
 </div>
 </div> -->
+
 <br>
 <div class="container" style="background:lightblue; width: 96%;
  height: 130px;" >
@@ -72,15 +73,15 @@
     <div class="form-group">
         <label for="Email" >UserName</label>
         <input type="text" class="form-control" id="email" name="email" placeholder="email"
-        [(ngModel)]="email"
-        >
+        [(ngModel)]="user.email" required    >
     </div>
     <div class="form-group">
         <label for="password">Password</label>
         <input type="password" class="form-control" id="password" name="password" placeholder="password"
-        [(ngModel)]="password"
-        >
+        [(ngModel)]="user.password" required >
     </div>
+    <br>  
+   <span class="label label-danger">{{message}}</span>
     <div class="form-group" style="text-align: center;">
     <table style="text-align: center;">
         <tr>
@@ -88,18 +89,15 @@
         </tr>
         <br>
         <tr> 
-          <td ><button type="button" class="btn btn-success " (click)="RegisterAsPolice()" style="width: 310px">Register as Police</button></td>
+          <td ><button type="button" class="btn btn-success " (click)="checkResponse()" style="width: 310px">Register as Police</button></td>
         </tr>
 
         <br>
         <tr> 
-          <td ><button type="button" class="btn btn-success " (click)="RegisterAsNgo()"style="width: 310px;">Register as Ngo</button></td>
+          <td ><button type="button" class="btn btn-success " (click)="checkResponseNgo()"style="width: 310px;">Register as Ngo</button></td>
         </tr>
     </table> 
     </div>
-    <br><br>  
-    <span class="label label-danger">{{message}}</span>
-
           </div>
         </div>
       </div>
