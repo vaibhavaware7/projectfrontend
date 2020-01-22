@@ -7,22 +7,37 @@
   <button type="button" (click)="onSearch()" class="btn btn-primary">Search By Name</button>
 <br>
      <div class="table-responsive" id="myDiv">
-    <table class="table">
-      <tr>
-          <th scope="col">Id</th>
-          <th scope="col">Name</th>
-          <th scope="col">Date Of Birth</th>
-          <th scope="col">Age</th>
-          <th scope="col">Image</th> 
-      </tr>
-    <tr>
-        <td>{{map.appNo}}</td>
-        <td>{{map.name}}</td>
-        <td>{{map.dob}}</td>
-        <td>{{map.age}}</td>
-        <td>{{map.img}}</td>
-      
-          </tr>
-     </table>
+<table>
+  <tr>
+    Application Id :<td> {{map.appNo}}</td>
+    Name :<td> {{map.name}}</td>
+  </tr>
+  <tr>
+    Age :<td> {{map.age}}</td>
+    Gender :<td> {{map.gendor}}</td>
+  </tr>
+  <tr>
+    Height :<td> {{map.height}}</td>
+    Blood Group :<td> {{map.bgrp}}</td>
+  </tr>
+  <tr>
+    Date Of Birth :<td> {{map.dob}}</td>
+    Missing Date :<td> {{map.missingDate}}</td>
+  </tr>
+  <tr>
+    City :<td> {{map.city}}</td>
+    State :<td> {{map.state}}</td>
+  </tr>
+
+  <tr>
+    Country :<td> {{map.country}}</td>
+    Phone no :<td> {{map.phoneno}}</td>
+  </tr>
+
+  <tr>
+    Complainant Number :<td> {{map.complainantNo}}</td>
+    Status :<td> {{map.status}}</td>
+  </tr>
+</table>
     
   </div>

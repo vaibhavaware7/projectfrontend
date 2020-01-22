@@ -53,6 +53,7 @@ export class AuthService implements CanActivate {
       
       this.emp=result
       debugger;
+      console.log(result)
       if(!isNull(this.emp))
       {   
       
@@ -61,22 +62,38 @@ export class AuthService implements CanActivate {
           
          sessionStorage['login_status'] = '1';
          localStorage.setItem('email',this.emp.email);
+          localStorage.setItem('name',this.emp.name);
+         localStorage.setItem('city',this.emp.city);
+         localStorage.setItem('state',this.emp.state);
+         localStorage.setItem('phoneno',this.emp.phoneno);
+         localStorage.setItem('uid',this.emp.uid);
          localStorage.setItem('flag','true');
-         this.router.navigate(['/admin']);
+         this.router.navigate(['/admin/adminhome']);
         }
         else if(this.emp.role=="POLICE" && this.emp.stat=="V")
         {
    
             sessionStorage['login_status'] = '1';
             localStorage.setItem('email',this.emp.email);
+             localStorage.setItem('name',this.emp.name);
+            localStorage.setItem('city',this.emp.city);
+            localStorage.setItem('state',this.emp.state);
+            localStorage.setItem('phoneno',this.emp.phoneno);
+            localStorage.setItem('uid',this.emp.uid);
             localStorage.setItem('flag','true');
             this.router.navigate(['/policehome/police']);
         }
          else if(this.emp.role=="NGO" && this.emp.stat=="V")
         {
    
-            sessionStorage['login_status'] = '1';
-            localStorage.setItem('email',this.emp.email);
+            
+         sessionStorage['login_status'] = '1';
+         localStorage.setItem('email',this.emp.email);
+          localStorage.setItem('name',this.emp.name);
+         localStorage.setItem('city',this.emp.city);
+         localStorage.setItem('state',this.emp.state);
+         localStorage.setItem('phoneno',this.emp.phoneno);
+         localStorage.setItem('uid',this.emp.uid);
             localStorage.setItem('flag','true');
             this.router.navigate(['/ngo']);
         }
@@ -89,7 +106,8 @@ export class AuthService implements CanActivate {
        else
        {
          debugger;
-         return "invalid";
+         alert("invalid login");
+         this.router.navigate(['']);
        }
      
       

@@ -10,13 +10,10 @@ export class PoliceService {
   constructor(private http:HttpClient) 
   { }
 
-  FileComplaint(victim,address)
+  FileComplaint(god)
   {
-    debugger;
-    const formData = new FormData();
-    formData.set("vic",JSON.stringify(victim));
-    formData.append("adr",JSON.stringify(address));
-    return this.http.post(this.baseUrl+"filecomplaint",formData);
+    debugger;;
+    return this.http.post(this.baseUrl+"filecomplaint",god);
   }
 
   GetAllCases()
@@ -26,5 +23,19 @@ export class PoliceService {
   GetCaseByName(name)
   {
     return this.http.get(this.baseUrl+"cases/"+name);
+  }
+  GetMessages()
+  {
+    var usrId= localStorage.getItem('uid');
+    return this.http.get(this.baseUrl+"msgs/"+usrId);
+  }
+  CloseCase(appNo)
+  {
+    return this.http.get(this.baseUrl+"close/"+appNo)
+  }
+  UpdateProfile(god)
+  {
+    var usrId= localStorage.getItem('uid');
+    return this.http.post(this.baseUrl+"updateuser/"+usrId,god);
   }
 }

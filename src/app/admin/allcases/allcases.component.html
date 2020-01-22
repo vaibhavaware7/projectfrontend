@@ -7,28 +7,24 @@
           <thead>
               <tr>
                   <th> Id</th>
-  
-                  <th> Name</th>
-                  <th> Date Of Birth</th>
+                 <th> Name</th>
                   <th> Age</th> 
                   <th> Image </th>
-                  <th> Close Case</th>
+                  <th> Status </th>
+                  <th> Remove Case</th>
               </tr>
           </thead>
           <tbody>
-              <tr *ngFor="let m of map">
-                  <td> {{m.appNo}}</td>
-  
-                  <td> {{m.name}}</td>
-  
-                  <td> {{m.dob}}</td>
-  
-                  <td> {{m.age}} </td>
-                  <td> {{m.img}} </td>
-  
+              <tr *ngFor="let case of cases">
+                  <td> {{case.appNo}}</td>
+                  <td> {{case.name}}</td>
+                  <td> {{case.age}} </td>
+                  <td> {{case.img}} </td>
+                  <td> {{case.status}}</td>
+   
                   <td> 
                       
-                   <button type="button" class="btn btn-success" (click)="CloseCase(m.appNo)">Close Case</button>
+                   <button type="button" class="btn btn-success" (click)="RemoveCase(case.appNo)">Remove</button>
                       
                   </td>
               </tr>

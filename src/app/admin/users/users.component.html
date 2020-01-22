@@ -1,21 +1,42 @@
-<h1>List Of all Users</h1>
-<br>
+<h1>List of all NGO's Currently associated with us</h1>
 <div class="table-responsive">
-    <table class="table">
-      <tr>
-          <th scope="col">Id</th>
-          <th scope="col">Name</th>
-          <th scope="col">Email</th>
-          <th scope="col">Phone</th>
-           <th scope="col">Image</th> 
-      </tr>
-      <tr *ngFor="let user of userlist">
-        <td>{{user.id}}</td>
-        <td>{{user.name}}</td>
-        <td>{{user.email}}</td>
-        <td>{{user.phone}}</td>
-        <td>{{user.image}}</td>
-          </tr>
+    
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th> Id</th>
+                <th> Name  </th>
+                <th> Role  </th>
+                <th> Email </th>
+                <th> Update</th>
+                <th> Send  </th>
+                <th> Remove</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of userlist">
+                <td> {{user.uid}}</td>
+
+                <td> {{user.name}}</td>
+
+                <td> {{user.role}}</td>
+
+                <td> {{user.email}} </td>
+
+                <td> 
+                    
+                 <button type="button" class="btn btn-success" (click)="Update(user.uid)">Update</button>
+                    
+                </td>
+                <td> 
+                        <button type="button" class="btn btn-success" (click)="SendMessage(user.email)">Send Message</button>
+                 </td>
+
+                <td> 
+                    <button type="button" class="btn btn-danger" (click)="Remove(user.uid)">Remove</button>
+                </td>
+            </tr>
+        </tbody>
     </table>
     
-  </div>
+</div>

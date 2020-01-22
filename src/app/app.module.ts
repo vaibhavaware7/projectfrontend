@@ -26,6 +26,13 @@ import { UsersComponent } from './admin/users/users.component';
 import { AdduserComponent } from './admin/adduser/adduser.component';
 import { AdmininboxComponent } from './admin/admininbox/admininbox.component';
 import { PoliceComponent } from './police/police/police.component';
+import { PolicecomposeComponent } from './police/policecompose/policecompose.component';
+import { NgolistComponent } from './police/ngolist/ngolist.component';
+import { UpdatepoliceComponent } from './police/updatepolice/updatepolice.component';
+import { AdminhomeComponent } from './admin/adminhome/adminhome.component';
+import { AllcasesComponent } from './admin/allcases/allcases.component';
+import { SearchpcComponent } from './admin/searchpc/searchpc.component';
+import { FrontComponent } from './home/front/front.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +54,14 @@ import { PoliceComponent } from './police/police/police.component';
     UsersComponent,
     AdduserComponent,
     AdmininboxComponent,
-    PoliceComponent
+    PoliceComponent,
+    PolicecomposeComponent,
+    NgolistComponent,
+    UpdatepoliceComponent,
+    AdminhomeComponent,
+    AllcasesComponent,
+    SearchpcComponent,
+    FrontComponent
   ],
   imports: [
     BrowserModule,
@@ -60,12 +74,28 @@ import { PoliceComponent } from './police/police/police.component';
       {path:"policehome",component:PolicehomeComponent},
       {path:"ngo",component:NgoComponent},
       {path:"admin",component:AdminComponent},
-      {path:"policereg",component:PolicregComponent},
-      {path:"ngoreg",component:NgoregComponent},
-      {path:"gallery",component:GalleryComponent},
-      {path:"stat",component:StatComponent},
-      {path:"org",component:OrgComponent},
-      {path:"about",component:AboutusComponent},
+     
+      {
+        path:'home',component:HomeComponent,children:[{path:'frontpage',component:FrontComponent}]  
+      },
+      {
+        path:'home',component:HomeComponent,children:[{path:'gallery',component:GalleryComponent}]  
+      },
+      {
+        path:'home',component:HomeComponent,children:[{path:'stat',component:StatComponent}]  
+      },
+      {
+        path:'home',component:HomeComponent,children:[{path:'org',component:OrgComponent}]  
+      },
+      {
+        path:'home',component:HomeComponent,children:[{path:'about',component:AboutusComponent}]  
+      },
+      {
+        path:'home',component:HomeComponent,children:[{path:'policereg',component:PolicregComponent}]  
+      },
+      {
+        path:'home',component:HomeComponent,children:[{path:'ngoreg',component:NgoregComponent}]  
+      },
       {
         path:'policehome',component:PolicehomeComponent,children:[{path:'police',component:PoliceComponent}]  
       },
@@ -80,11 +110,34 @@ import { PoliceComponent } from './police/police/police.component';
       }, 
       {
         path:'policehome',component:PolicehomeComponent,children:[{path:'inbox',component:PoliceinboxComponent}]  
+      }, 
+      {
+        path:'policehome',component:PolicehomeComponent,children:[{path:'ngolist',component:NgolistComponent}]  
       },
-      {path:"ngoinbox",component:NgoinboxComponent},
-      {path:"users",component:UsersComponent},
-      {path:"adduser",component:AdduserComponent},
-      {path:"admininbox",component:AdmininboxComponent}
+      {
+        path:'policehome',component:PolicehomeComponent,children:[{path:'compose',component:PolicecomposeComponent}]  
+      },
+      {
+        path:'policehome',component:PolicehomeComponent,children:[{path:'updatepolice',component:UpdatepoliceComponent}]  
+      },
+      {
+        path:'admin',component:AdminComponent,children:[{path:'adminhome',component:AdminhomeComponent}]  
+      },
+      {
+        path:'admin',component:AdminComponent,children:[{path:'users',component:UsersComponent}]  
+      },
+      {
+        path:'admin',component:AdminComponent,children:[{path:'allcases',component:AllcasesComponent}]  
+      },
+      {
+        path:'admin',component:AdminComponent,children:[{path:'adduser',component:AdduserComponent}]  
+      },
+      {
+        path:'admin',component:AdminComponent,children:[{path:'admininbox',component:AdmininboxComponent}]  
+      },
+      {
+        path:'ngo',component:AdminComponent,children:[{path:'ngoinbox',component:NgoinboxComponent}]  
+      },
     ])
     
   ],

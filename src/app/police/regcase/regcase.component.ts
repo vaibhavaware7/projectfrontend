@@ -9,8 +9,8 @@ import { PoliceService } from 'src/app/police.service';
 })
 export class RegcaseComponent implements OnInit {
 
-  victim={name:"",age:"",gendor:"",height:"",bgrp:"",dob:"",missingDate:"",complainantNo:""}
-  address={city:"",state:"",country:"",phoneno:""}
+  god={name:"",age:"",gendor:"",height:"",bgrp:"",dob:"",missingDate:"",complainantNo:"",
+  city:"",state:"",country:"",phoneno:""}
   constructor(private router:Router,private service:PoliceService) { }
 
   ngOnInit() 
@@ -18,7 +18,7 @@ export class RegcaseComponent implements OnInit {
   }
   onRegister()
   {
-   let observableResult= this.service.FileComplaint(this.victim,this.address);
+   let observableResult= this.service.FileComplaint(this.god);
    debugger;  
     observableResult.subscribe((result)=>{
       if(result==true)

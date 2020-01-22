@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AdminService } from '../admin.service';
 
 @Component({
   selector: 'app-users',
@@ -8,10 +9,27 @@ import { Router } from '@angular/router';
 })
 export class UsersComponent implements OnInit {
 
-  userlist={id:"",name:"",email:"",phone:"",image:""}
-  constructor(private router:Router) { }
+  userlist:any;
+  constructor(private router:Router,private service:AdminService)
+   { }
 
-  ngOnInit() {
+  ngOnInit()
+  {
+    let observableResult= this.service.GetAllUsers();
+    observableResult.subscribe((result)=>{
+      this.userlist=result;
+    })
   }
+  Update(uid)
+  {
 
+  }
+  SendMessage(email)
+  {
+
+  }
+  Remove(uid)
+  {
+
+  }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PoliceService } from 'src/app/police.service';
 
 @Component({
   selector: 'app-policeinbox',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PoliceinboxComponent implements OnInit {
 
-  constructor() { }
+  msglist:any;
+  constructor(private service:PoliceService) { }
 
-  ngOnInit() {
+  ngOnInit()
+  {
+    let observableResult =this.service.GetMessages();
+    observableResult.subscribe((result)=>{
+      console.log(result);
+      this.msglist=result;
+    })
   }
 
 }

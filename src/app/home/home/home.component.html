@@ -34,11 +34,11 @@
           </div> 
           <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-              <li class="active"><a routerLink="/home">Home</a></li>
-              <li><a routerLink="/gallery">Gallery</a></li>
-              <li><a routerLink="/stat">Statistics</a></li>
-              <li><a routerLink="/org">Orgnisations</a></li>
-              <li><a routerLink="/about">About us</a></li>
+              <li class="active"><a routerLink="/home/frontpage">Home</a></li>
+              <li><a routerLink="/home/gallery">Gallery</a></li>
+              <li><a routerLink="/home/stat">Statistics</a></li>
+              <li><a routerLink="/home/org">Orgnisations</a></li>
+              <li><a routerLink="/home/about">About us</a></li>
             </ul>
             
           </div>
@@ -55,17 +55,16 @@
               </div>
           </div>
           <div class="col-md-6 text-left"> 
-            
-            <div class="jumbotron">
-              <div class="container">
-                <h1>Welcome..</h1>
-                <p style="text-align: justify;"> This portal is help to manage human anti-trafficking
-                    cases for police and releated NGO's.  </p>
-                  <h3 style="font-weight: 600;"> What is Human Trafficking ?</h3>
-                  <p> ...static data...</p>
-              </div>
-            </div>
-            
+              <div class="jumbotron">
+                  <div class="container">
+                    <h1>Welcome..</h1>
+                    <p style="text-align: justify;"> This portal is help to manage human anti-trafficking
+                        cases for police and releated NGO's.  </p>
+                      <h3 style="font-weight: 600;"> What is Human Trafficking ?</h3>
+                      <p> ...static data...</p>
+                  </div>
+                </div>
+            <router-outlet></router-outlet>    
           </div>
           <div class="col-md-3 ">
             
