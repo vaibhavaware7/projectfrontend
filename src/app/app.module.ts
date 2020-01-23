@@ -35,6 +35,8 @@ import { SearchpcComponent } from './admin/searchpc/searchpc.component';
 import { FrontComponent } from './home/front/front.component';
 import { AdmincomposeComponent } from './admin/admincompose/admincompose.component';
 import { AddngpoComponent } from './admin/addngpo/addngpo.component';
+import { RequestComponent } from './admin/request/request.component';
+import { SearchuserComponent } from './admin/searchuser/searchuser.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,7 +67,9 @@ import { AddngpoComponent } from './admin/addngpo/addngpo.component';
     SearchpcComponent,
     FrontComponent,
     AdmincomposeComponent,
-    AddngpoComponent
+    AddngpoComponent,
+    RequestComponent,
+    SearchuserComponent
   ],
   imports: [
     BrowserModule,
@@ -78,6 +82,8 @@ import { AddngpoComponent } from './admin/addngpo/addngpo.component';
       {path:"policehome",component:PolicehomeComponent},
       {path:"ngo",component:NgoComponent},
       {path:"admin",component:AdminComponent},
+      { path:'policereg',component:PolicregComponent},
+      { path:'ngoreg',component:NgoregComponent},
      
       {
         path:'home',component:HomeComponent,children:[{path:'frontpage',component:FrontComponent}]  
@@ -93,12 +99,6 @@ import { AddngpoComponent } from './admin/addngpo/addngpo.component';
       },
       {
         path:'home',component:HomeComponent,children:[{path:'about',component:AboutusComponent}]  
-      },
-      {
-        path:'home',component:HomeComponent,children:[{path:'policereg',component:PolicregComponent}]  
-      },
-      {
-        path:'home',component:HomeComponent,children:[{path:'ngoreg',component:NgoregComponent}]  
       },
       {
         path:'policehome',component:PolicehomeComponent,children:[{path:'police',component:PoliceComponent}]  
@@ -148,6 +148,12 @@ import { AddngpoComponent } from './admin/addngpo/addngpo.component';
       },
       {
         path:'admin',component:AdminComponent,children:[{path:'addngpo',component:AddngpoComponent}]  
+      },
+      {
+        path:'admin',component:AdminComponent,children:[{path:'requests',component:RequestComponent}]  
+      },
+      {
+        path:'admin',component:AdminComponent,children:[{path:'searchuser',component:SearchuserComponent}]  
       },
       {
         path:'ngo',component:AdminComponent,children:[{path:'ngoinbox',component:NgoinboxComponent}]  

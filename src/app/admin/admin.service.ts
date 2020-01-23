@@ -6,40 +6,52 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AdminService {
 
-  baseUrl="http://localhost:8080/hatportal/";
+  baseUrl="http://localhost:8080/hatportal/admin/";
   constructor(private http:HttpClient) { }
 
   GetAllUsers()
   {
-    return this.http.get(this.baseUrl+"admin/users");
+    return this.http.get(this.baseUrl+"users");
   }
   GetAllCases()
   {
-    return this.http.get(this.baseUrl+"admin/cases")
+    return this.http.get(this.baseUrl+"cases")
   }
   Remove(appNo)
   {
-    return this.http.get(this.baseUrl+"admin/remove/"+appNo)
+    return this.http.get(this.baseUrl+"remove/"+appNo)
   }
   AddUser(god)
   {
-    return this.http.post(this.baseUrl+"admin/add",god);
+    return this.http.post(this.baseUrl+"add",god);
   }
   GetVictim(name)
   {
-    return this.http.get(this.baseUrl+"admin/getvic/"+name);
+    return this.http.get(this.baseUrl+"getvic/"+name);
   }
   GetAdminMessages(uid)
   {
-    return this.http.get(this.baseUrl+"admin/msgs/"+uid);
+    return this.http.get(this.baseUrl+"msgs/"+uid);
   }
   RemoveUser(uid)
   {
     debugger;
-    return this.http.delete(this.baseUrl+"admin/delete/"+uid);
+    return this.http.delete(this.baseUrl+"delete/"+uid);
   }
   AddDept(god)
   {
-    return this.http.post(this.baseUrl+"admin/addept",god);
+    return this.http.post(this.baseUrl+"addept",god);
+  }
+  GetAllRequests()
+  {
+    return this.http.get(this.baseUrl+"requests");
+  }
+  Verify(uid)
+  {
+    return this.http.get(this.baseUrl+"verify/"+uid);
+  }
+  GetUser(name)
+  {
+    return this.http.get(this.baseUrl+"user/"+name);
   }
 }

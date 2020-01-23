@@ -1,5 +1,5 @@
-<h1 style="text-align: center">NGO Registeration Form</h1>
 
+<!--   
 <div class="row" >
   <div class="col-md-3"></div>
   <div class="col-md-6">
@@ -56,5 +56,72 @@
     <div class="form-group" style="text-align: center;">
         <button (click)="onRegister()" class="btn btn-success">Register</button>
     </div>
+  </div>
+</div> --> 
+<h1 style="text-align: center ;color:green;">NGO Registeration Form</h1>
+
+<div class="row" >
+  <div class="col-md-1"></div>
+  <div class="col-md-5">
+    <div class="form-group">
+      <label for="">Full Name</label>
+      <input [(ngModel)]="god.name" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="">Email</label>
+      <input [(ngModel)]="god.email" type="email" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="">Phone</label>
+      <input [(ngModel)]="god.phoneno" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="">City</label>
+      <input [(ngModel)]="god.city" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="">State</label>
+      <input [(ngModel)]="god.state" type="text" class="form-control" >
+    </div>
+
+    <div class="form-group">
+        <label for="">Country</label>
+        <input [(ngModel)]="god.country" type="text" class="form-control">
+      </div>
+         
+   
+  </div>
+  <div class="col-md-5">
+   
+    <div class="form-group">
+        <label for="">NGO Name</label>
+        <input [(ngModel)]="god.deptname" type="text" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="">NGO City</label>
+        <input [(ngModel)]="god.deptcity" type="text" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="">NGO State</label>
+        <input [(ngModel)]="god.deptstate" type="text" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="">NGO Country</label>
+        <input [(ngModel)]="god.deptcountry" type="text" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="">NGO Contact No</label>
+        <input [(ngModel)]="god.deptphoneno" type="text" class="form-control">
+      </div>
+      <div class="form-group">
+          <label for="">Password</label>
+          <input [(ngModel)]="god.password" type="password" class="form-control">
+        </div>
+  
+  </div>
+</div>
+<div class="col-md-12">
+  <div class="form-group" style="text-align: center;">
+    <button style="width: 100px;" (click)="onRegister()" class="btn btn-success">Register</button>
   </div>
 </div>

@@ -14,6 +14,10 @@ export class CommondataService {
     return this.http.post(this.baseUrl+"users/login",user);
   }
 
+  Register(god)
+  {
+    return this.http.post(this.baseUrl+"users/register",god);
+  }
 
 
 }
