@@ -1,1 +1,61 @@
-<p>searchpc works!</p>
+<h1>Search Missing Victim</h1>
+<div class="form-group">
+    <label for="Name" >Name</label>
+    <input type="text" class="form-control" id="name" name="name" placeholder="enter name of missing person"
+    [(ngModel)]="name" required    >
+</div>
+  <button type="button" (click)="onSearch()" class="btn btn-primary">Search By Name</button>
+<br>
+<br>
+<div class="table-responsive" id="myDiv">
+    
+<table class="table table-striped table-hover">
+       
+        <tbody>
+                <tr>
+                       <td> <h5>Application Number :</h5> {{vic.appNo}} </td>
+        
+                     <td> <h5>   Person Name:</h5>  {{vic.name}} </td>
+        
+                    </tr>
+                    <tr>
+
+                       <td><h5> Age :</h5> {{vic.age}} </td>
+
+                         <td> <h5> Gender :</h5>  {{vic.gendor}} </td>
+            
+                        </tr>
+                        <tr>
+                                <td><h5> Height :</h5> {{vic.height}} </td>
+            
+                                <td><h5>Blood Group :</h5> {{vic.bgrp}} </td>
+                         </tr>
+
+                        <tr>
+                                <td><h5>Date Of Birth :</h5> {{vic.dob}} </td>
+                
+                                <td> <h5>Missing Date :</h5>{{vic.missingDate}} </td>
+                
+                            </tr>
+                            <tr>
+                                    <td> <h5>Complainant Numbre :</h5>{{vic.complainantNo}} </td>
+                       
+                                    <td> <h5> City :</h5> {{vic.city}} </td>
+                                     
+                           </tr>
+                           <tr>
+                                <td> <h5>State :</h5> {{vic.state}} </td>
+                    
+                                <td> <h5>Country :</h5> {{vic.country}} </td>
+                       
+                           </tr>
+                           <tr>
+                                <td> <h5>Phone Number : </h5> {{vic.phoneno}} </td>
+                
+                                <td> <h5>Status</h5> {{vic.status}} </td>
+               
+                           </tr>
+        </tbody>
+    </table>
+    
+</div>

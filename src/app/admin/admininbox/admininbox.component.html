@@ -1,1 +1,16 @@
-<h1>List Of All Messages</h1>
+<h1>List Of all Messages Received</h1>
+
+<div class="table-responsive" style="width:700px">
+    <table class="table table-striped">
+    <tr>
+            <th> Messages </th>
+    </tr>
+    <tr *ngFor="let msgs of msglist">
+        <td>
+            <div class="container-fluid">        
+                <textarea name="msg" id="input" class="form-control" rows="5">{{msgs.msg}}</textarea>   
+            </div>
+        </td>
+    </tr>
+    </table>
+</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from '../admin.service';
 
 @Component({
   selector: 'app-admininbox',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdmininboxComponent implements OnInit {
 
-  constructor() { }
+  msglist:any;
+  constructor(private service :AdminService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() 
+  {
+    let uid= localStorage.getItem('uid');
+  let observableResult=   this.service.GetAdminMessages(uid);
+    observableResult.subscribe((result)=>{
+      this.msglist=result;
+    })
+}
 
 }

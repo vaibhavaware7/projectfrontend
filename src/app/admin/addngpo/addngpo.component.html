@@ -1,0 +1,77 @@
+<div class="col-md-9">
+<table class="table table-striped" >
+    <tbody>
+        <tr>
+            <td>
+              
+              <div class="radio">
+                  <label>
+                      <input type="radio" name="god.role" id="input" value="NGO" [(ngModel)]="god.role">
+                      NGO
+                  </label>
+              </div>
+              
+            </td>
+
+            <td> 
+                    <div class="radio">
+                            <label>
+                                <input type="radio" name="god.role" id="input" value="POLICE" [(ngModel)]="god.role">
+                                POLICE
+                            </label>
+                        </div>
+             
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<div class="table-responsive" >
+
+<table class="table table-striped">
+    <tbody>
+        <tr>
+            <td>
+             <h3>NGO/Police Dept Name :</h3>
+            </td>
+            <td>
+                 <input type="text" id="name" name="name" [(ngModel)]="god.name">
+            </td>
+        </tr>
+
+        <tr>
+            <td><h3>City :</h3></td>
+            <td>
+                 <input type="text" id="name" name="name" [(ngModel)]="god.city">
+            </td>
+        </tr>
+
+        <tr>
+                <td><h3> State :</h3></td>
+            <td>
+                 <input type="text" id="name" name="name" [(ngModel)]="god.state">
+            </td>
+        </tr>
+
+        <tr>
+            <td><h3> Country :</h3></td>
+            <td>
+                 <input type="text" id="name" name="name" [(ngModel)]="god.country">
+            </td>
+        </tr>
+
+        <tr>
+            <td><h3> Contact No. :</h3></td>
+            <td>
+                 <input type="text" id="name" name="name" [(ngModel)]="god.phoneno">
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+</div>
+<br>
+
+<button type="button" class="btn btn-success" (click)="AddDept()">Insert</button>
+
+</div>

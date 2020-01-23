@@ -1,37 +1,39 @@
 <h1 style="text-align: center">User Registeration Form</h1>
 
 <div class="row" >
-  <div class="col-md-3"></div>
-  <div class="col-md-6">
+  <div class="col-md-9">
     <div class="form-group">
       <label for="">Full Name</label>
-      <input [(ngModel)]="name" type="text" class="form-control">
+      <input [(ngModel)]="god.name" type="text" class="form-control">
     </div>
     <div class="form-group">
       <label for="">Email</label>
-      <input [(ngModel)]="email" type="email" class="form-control">
+      <input [(ngModel)]="god.email" type="email" class="form-control">
     </div>
     <div class="form-group">
       <label for="">Phone</label>
-      <input [(ngModel)]="phoneno" type="text" class="form-control">
+      <input [(ngModel)]="god.phoneno" type="text" class="form-control">
     </div>
     <div class="form-group">
       <label for="">City</label>
-      <input [(ngModel)]="city" type="text" class="form-control">
+      <input [(ngModel)]="god.city" type="text" class="form-control">
     </div>
     <div class="form-group">
       <label for="">State</label>
-      <input [(ngModel)]="state" type="text" class="form-control" >
+      <input [(ngModel)]="god.state" type="text" class="form-control" >
     </div>
 
     <div class="form-group">
         <label for="">Country</label>
-        <input [(ngModel)]="country" type="text" class="form-control">
+        <input [(ngModel)]="god.country" type="text" class="form-control">
       </div>
-      
+    <div class="form-group">
+        <label for="">Role</label>
+        <input [(ngModel)]="god.role" type="text" class="form-control">
+     </div>
     <div class="form-group">
         <label for="">Password</label>
-        <input [(ngModel)]="password" type="password" class="form-control">
+        <input [(ngModel)]="god.password" type="password" class="form-control">
       </div>
     <div class="form-group" style="text-align: center;">
         <button (click)="onRegister()" class="btn btn-success">Register</button>

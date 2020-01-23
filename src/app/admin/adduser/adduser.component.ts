@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AdminService } from '../admin.service';
 
 @Component({
   selector: 'app-adduser',
@@ -8,14 +9,25 @@ import { Router } from '@angular/router';
 })
 export class AdduserComponent implements OnInit {
 
-  name;email;password;city;country;state;phoneno;
-  constructor( private router:Router) { }
+  god={name:"",email:"",phoneno:"",role:"",city:"",state:"",country:"",password:""}
+  constructor( private router:Router,private service:AdminService) { }
 
   ngOnInit() {
   }
   onRegister()
-  {
-    alert('user is added...')
-    this.router.navigate(['/admin']);
-  }
+  { 
+    let observableRessult= this.service.AddUser(this.god);
+    observableRessult.subscribe((result)=>{
+      if(result==true)
+      {
+        alert('User Added SuccessFully !')
+        this.router.navigate(['/admin/adminhome']);
+      }
+      else{
+        alert('User Registration Failed !..')
+        this.router.navigate(['/admin/adminhome']);
+        
+      }
+    })
+    }
 }

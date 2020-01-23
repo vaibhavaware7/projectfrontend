@@ -33,6 +33,8 @@ import { AdminhomeComponent } from './admin/adminhome/adminhome.component';
 import { AllcasesComponent } from './admin/allcases/allcases.component';
 import { SearchpcComponent } from './admin/searchpc/searchpc.component';
 import { FrontComponent } from './home/front/front.component';
+import { AdmincomposeComponent } from './admin/admincompose/admincompose.component';
+import { AddngpoComponent } from './admin/addngpo/addngpo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +63,9 @@ import { FrontComponent } from './home/front/front.component';
     AdminhomeComponent,
     AllcasesComponent,
     SearchpcComponent,
-    FrontComponent
+    FrontComponent,
+    AdmincomposeComponent,
+    AddngpoComponent
   ],
   imports: [
     BrowserModule,
@@ -132,8 +136,18 @@ import { FrontComponent } from './home/front/front.component';
       {
         path:'admin',component:AdminComponent,children:[{path:'adduser',component:AdduserComponent}]  
       },
+
+      {
+        path:'admin',component:AdminComponent,children:[{path:'searchpc',component:SearchpcComponent}]  
+      },
       {
         path:'admin',component:AdminComponent,children:[{path:'admininbox',component:AdmininboxComponent}]  
+      },
+      {
+        path:'admin',component:AdminComponent,children:[{path:'admincompose',component:AdmincomposeComponent}]  
+      },
+      {
+        path:'admin',component:AdminComponent,children:[{path:'addngpo',component:AddngpoComponent}]  
       },
       {
         path:'ngo',component:AdminComponent,children:[{path:'ngoinbox',component:NgoinboxComponent}]  

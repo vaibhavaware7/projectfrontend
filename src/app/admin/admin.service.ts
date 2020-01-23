@@ -21,4 +21,25 @@ export class AdminService {
   {
     return this.http.get(this.baseUrl+"admin/remove/"+appNo)
   }
+  AddUser(god)
+  {
+    return this.http.post(this.baseUrl+"admin/add",god);
+  }
+  GetVictim(name)
+  {
+    return this.http.get(this.baseUrl+"admin/getvic/"+name);
+  }
+  GetAdminMessages(uid)
+  {
+    return this.http.get(this.baseUrl+"admin/msgs/"+uid);
+  }
+  RemoveUser(uid)
+  {
+    debugger;
+    return this.http.delete(this.baseUrl+"admin/delete/"+uid);
+  }
+  AddDept(god)
+  {
+    return this.http.post(this.baseUrl+"admin/addept",god);
+  }
 }

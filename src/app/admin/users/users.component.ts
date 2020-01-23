@@ -26,10 +26,22 @@ export class UsersComponent implements OnInit {
   }
   SendMessage(email)
   {
-
+    sessionStorage.setItem('useremail',email);
+    this.router.navigate(['/admin/admincompose']);
   }
   Remove(uid)
   {
-
+    let observableResult = this.service.RemoveUser(uid);
+    observableResult.subscribe((result)=>{
+      if(result == true)
+      {
+        alert('User Deleted Successfully')
+        this.router.navigate(['/admin/adminhome'])
+      }
+      else{
+        alert('User Deletion Failed ..')
+        this.router.navigate(['/admin/adminhome'])  
+      }
+    })
   }
 }
