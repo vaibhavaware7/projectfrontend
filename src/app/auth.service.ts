@@ -95,7 +95,7 @@ export class AuthService implements CanActivate {
          localStorage.setItem('phoneno',this.emp.phoneno);
          localStorage.setItem('uid',this.emp.uid);
         localStorage.setItem('flag','true');
-            this.router.navigate(['/ngo']);
+            this.router.navigate(['/ngo/ngohome']);
         }
         else
         {

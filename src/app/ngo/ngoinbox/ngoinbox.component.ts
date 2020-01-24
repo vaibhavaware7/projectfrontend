@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PoliceService } from 'src/app/police.service';
+import { isNull } from 'util';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ngoinbox',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NgoinboxComponent implements OnInit {
 
-  constructor() { }
+  msglist:any;
+  constructor(private service:PoliceService,private router:Router) { }
 
-  ngOnInit() {
+  ngOnInit()
+  {
+    let observableResult =this.service.GetMessages();
+    observableResult.subscribe((result)=>{
+      console.log(result);
+      if(isNull(result))
+      {
+        alert('No messages yet !!1')
+        this.router.navigate(['/ngo/ngohome'])
+      }else{
+        this.msglist=result;
+      }
+      })
   }
 
 }

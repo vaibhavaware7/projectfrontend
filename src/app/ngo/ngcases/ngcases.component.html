@@ -3,7 +3,7 @@
     
   <div class="table-responsive">
     
-  <table class="table table-striped table-hover">
+  <table class="table table-striped " style="text-align: left;">
           <thead>
               <tr>
                   <th> Id</th>
@@ -11,26 +11,16 @@
                   <th> Date Of Birth</th>
                   <th> Age</th> 
                   <th> Image </th>
-                  <th> Close Case</th>
               </tr>
           </thead>
           <tbody>
               <tr *ngFor="let m of map">
                   <td> {{m.appNo}}</td>
-  
                   <td> {{m.name}}</td>
-  
                   <td> {{m.dob}}</td>
-  
                   <td> {{m.age}} </td>
                   <td> {{m.img}} </td>
-  
-                  <td> 
-                      
-                   <button type="button" class="btn btn-success" (click)="CloseCase(m.appNo)">Close Case</button>
-                      
-                  </td>
-              </tr>
+             </tr>
           </tbody>
       </table>
       

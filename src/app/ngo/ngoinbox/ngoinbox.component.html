@@ -1,1 +1,17 @@
-<h1>List Of Messages Received To This Ngo User </h1>
+
+<h1>List Of all Messages Received</h1>
+
+<div class="table-responsive">
+    <table>
+    <tr>
+            <th> Messages </th>
+    </tr>
+    <tr *ngFor="let msgs of msglist">
+        <td>
+            <div class="container-fluid">        
+                <textarea name="msg" id="input" class="form-control" rows="5">{{msgs.msg}}</textarea>   
+            </div>
+        </td>
+    </tr>
+    </table>
+</div>

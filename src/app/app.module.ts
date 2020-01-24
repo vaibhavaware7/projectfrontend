@@ -37,6 +37,11 @@ import { AdmincomposeComponent } from './admin/admincompose/admincompose.compone
 import { AddngpoComponent } from './admin/addngpo/addngpo.component';
 import { RequestComponent } from './admin/request/request.component';
 import { SearchuserComponent } from './admin/searchuser/searchuser.component';
+import { NgohomeComponent } from './ngo/ngohome/ngohome.component';
+import { NgcasesComponent } from './ngo/ngcases/ngcases.component';
+import { NgsearchComponent } from './ngo/ngsearch/ngsearch.component';
+import { NgusersComponent } from './ngo/ngusers/ngusers.component';
+import { NgocomposeComponent } from './ngo/ngocompose/ngocompose.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,7 +74,12 @@ import { SearchuserComponent } from './admin/searchuser/searchuser.component';
     AdmincomposeComponent,
     AddngpoComponent,
     RequestComponent,
-    SearchuserComponent
+    SearchuserComponent,
+    NgohomeComponent,
+    NgcasesComponent,
+    NgsearchComponent,
+    NgusersComponent,
+    NgocomposeComponent
   ],
   imports: [
     BrowserModule,
@@ -156,7 +166,22 @@ import { SearchuserComponent } from './admin/searchuser/searchuser.component';
         path:'admin',component:AdminComponent,children:[{path:'searchuser',component:SearchuserComponent}]  
       },
       {
-        path:'ngo',component:AdminComponent,children:[{path:'ngoinbox',component:NgoinboxComponent}]  
+        path:'ngo',component:NgoComponent,children:[{path:'ngoinbox',component:NgoinboxComponent}]  
+      },
+      {
+        path:'ngo',component:NgoComponent,children:[{path:'ngohome',component:NgohomeComponent}]  
+      },
+      {
+        path:'ngo',component:NgoComponent,children:[{path:'ngcases',component:NgcasesComponent}]  
+      },
+      {
+        path:'ngo',component:NgoComponent,children:[{path:'ngsearch',component:NgsearchComponent}]  
+      },
+      {
+        path:'ngo',component:NgoComponent,children:[{path:'ngusers',component:NgusersComponent}]  
+      },
+      {
+        path:'ngo',component:NgoComponent,children:[{path:'ngocompose',component:NgocomposeComponent}]  
       },
     ])
     
