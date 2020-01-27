@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdminService } from '../admin.service';
+import { PoliceService } from 'src/app/police.service';
 
 @Component({
   selector: 'app-allcases',
@@ -10,12 +11,13 @@ import { AdminService } from '../admin.service';
 export class AllcasesComponent implements OnInit 
 {
   cases:any;
-  constructor(private router:Router,private service:AdminService) { }
+  constructor(private router:Router,private service:AdminService,private serv :PoliceService) { }
 
   ngOnInit() 
   {
-    let observableResult=this.service.GetAllCases();
+    let observableResult=this.serv.GetAllCases();
     observableResult.subscribe((result)=>{
+      console.log(result)
       this.cases=result;
     })
   }

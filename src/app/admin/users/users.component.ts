@@ -20,10 +20,6 @@ export class UsersComponent implements OnInit {
       this.userlist=result;
     })
   }
-  Update(uid)
-  {
-
-  }
   SendMessage(email)
   {
     sessionStorage.setItem('useremail',email);

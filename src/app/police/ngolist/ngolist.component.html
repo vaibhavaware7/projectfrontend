@@ -1,27 +1,27 @@
-<h1>List of all NGO's Currently associated with us</h1>
+<h1>List of all Users Currently associated with us</h1>
 <div class="table-responsive">
     
     <table class="table table-striped table-hover">
         <thead>
             <tr>
-                <th> NGO id</th>
+                <th> Id</th>
 
-                <th> NGO Name</th>
-                <th> NGO User Name</th>
-                <th> NGO User Email</th>
+                <th> Name</th>
+                <th> Email</th>
+                <th> Role</th>
 
                 <th> Send </th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let ngo of ngolist">
-                <td> {{ngo.ngoId}}</td>
-
-                <td> {{ngo.ngoname}}</td>
+                <td> {{ngo.uid}}</td>
 
                 <td> {{ngo.name}}</td>
 
-                <td> {{ngo.email}} </td>
+                <td> {{ngo.email}}</td>
+
+                <td> {{ngo.role}} </td>
 
                 <td> 
                     

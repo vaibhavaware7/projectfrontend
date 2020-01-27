@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../admin.service';
 import { isNull } from 'util';
 import { Router } from '@angular/router';
+import { PoliceService } from 'src/app/police.service';
 
 @Component({
   selector: 'app-searchpc',
@@ -12,7 +13,7 @@ export class SearchpcComponent implements OnInit {
 
   name;
   vic:any;  
-  constructor(private router:Router, private service:AdminService) { }
+  constructor(private router:Router, private service:PoliceService) { }
 
   ngOnInit() 
   {
@@ -23,7 +24,7 @@ export class SearchpcComponent implements OnInit {
     debugger;
 
     document.getElementById('myDiv').style.visibility="visible";
-    let observableResult = this.service.GetVictim(this.name);
+    let observableResult = this.service.GetCaseByName(this.name);
     observableResult.subscribe((result)=>{
       console.log(result);
       if(!isNull(result))

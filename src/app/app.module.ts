@@ -32,7 +32,6 @@ import { UpdatepoliceComponent } from './police/updatepolice/updatepolice.compon
 import { AdminhomeComponent } from './admin/adminhome/adminhome.component';
 import { AllcasesComponent } from './admin/allcases/allcases.component';
 import { SearchpcComponent } from './admin/searchpc/searchpc.component';
-import { FrontComponent } from './home/front/front.component';
 import { AdmincomposeComponent } from './admin/admincompose/admincompose.component';
 import { AddngpoComponent } from './admin/addngpo/addngpo.component';
 import { RequestComponent } from './admin/request/request.component';
@@ -42,6 +41,7 @@ import { NgcasesComponent } from './ngo/ngcases/ngcases.component';
 import { NgsearchComponent } from './ngo/ngsearch/ngsearch.component';
 import { NgusersComponent } from './ngo/ngusers/ngusers.component';
 import { NgocomposeComponent } from './ngo/ngocompose/ngocompose.component';
+import { NgupdateComponent } from './ngo/ngupdate/ngupdate.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,7 +70,6 @@ import { NgocomposeComponent } from './ngo/ngocompose/ngocompose.component';
     AdminhomeComponent,
     AllcasesComponent,
     SearchpcComponent,
-    FrontComponent,
     AdmincomposeComponent,
     AddngpoComponent,
     RequestComponent,
@@ -79,7 +78,8 @@ import { NgocomposeComponent } from './ngo/ngocompose/ngocompose.component';
     NgcasesComponent,
     NgsearchComponent,
     NgusersComponent,
-    NgocomposeComponent
+    NgocomposeComponent,
+    NgupdateComponent
   ],
   imports: [
     BrowserModule,
@@ -87,29 +87,24 @@ import { NgocomposeComponent } from './ngo/ngocompose/ngocompose.component';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      {path:"",component:HomeComponent},
       {path:"home",component:HomeComponent},
       {path:"policehome",component:PolicehomeComponent},
       {path:"ngo",component:NgoComponent},
       {path:"admin",component:AdminComponent},
       { path:'policereg',component:PolicregComponent},
       { path:'ngoreg',component:NgoregComponent},
-     
       {
-        path:'home',component:HomeComponent,children:[{path:'frontpage',component:FrontComponent}]  
+        path:'',component:HomeComponent
       },
+      
       {
-        path:'home',component:HomeComponent,children:[{path:'gallery',component:GalleryComponent}]  
-      },
+      path:'gallery',component:GalleryComponent},
       {
-        path:'home',component:HomeComponent,children:[{path:'stat',component:StatComponent}]  
-      },
+        path:'stat',component:StatComponent},
       {
-        path:'home',component:HomeComponent,children:[{path:'org',component:OrgComponent}]  
-      },
+      path:'org',component:OrgComponent},
       {
-        path:'home',component:HomeComponent,children:[{path:'about',component:AboutusComponent}]  
-      },
+      path:'about',component:AboutusComponent},
       {
         path:'policehome',component:PolicehomeComponent,children:[{path:'police',component:PoliceComponent}]  
       },
@@ -182,6 +177,9 @@ import { NgocomposeComponent } from './ngo/ngocompose/ngocompose.component';
       },
       {
         path:'ngo',component:NgoComponent,children:[{path:'ngocompose',component:NgocomposeComponent}]  
+      },
+      {
+        path:'ngo',component:NgoComponent,children:[{path:'ngupdate',component:NgupdateComponent}]  
       },
     ])
     

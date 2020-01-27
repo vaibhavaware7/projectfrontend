@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { PoliceService } from 'src/app/police.service';
-
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-updatepolice',
-  templateUrl: './updatepolice.component.html',
-  styleUrls: ['./updatepolice.component.css']
+  selector: 'app-ngupdate',
+  templateUrl: './ngupdate.component.html',
+  styleUrls: ['./ngupdate.component.css']
 })
-export class UpdatepoliceComponent implements OnInit {
+export class NgupdateComponent implements OnInit {
   god={uid:"",email:"",name:"", city:"",state:"",phoneno:""}
   constructor(private service:PoliceService,private router:Router)
    { }
@@ -25,17 +24,18 @@ export class UpdatepoliceComponent implements OnInit {
 
   onUpdate()
   {
+
     let observableResult =this.service.UpdateProfile(this.god);
     observableResult.subscribe((result)=>{
       if(result == true)
       {
         alert('Profile Updated Successfully')
-        this.router.navigate(['/policehome/police'])
+        this.router.navigate(['/ngo/ngohome'])
       }
       else{
         alert('OOPS !! Profile Updation Failed ... ')
 
-        this.router.navigate(['/policehome/police'])
+        this.router.navigate(['/ngo/ngohome'])
       }
     })  
   

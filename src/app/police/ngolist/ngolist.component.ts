@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgoService } from 'src/app/ngo.service';
 import { Router } from '@angular/router';
+import { AdminService } from 'src/app/admin/admin.service';
 
 @Component({
   selector: 'app-ngolist',
@@ -10,11 +11,11 @@ import { Router } from '@angular/router';
 export class NgolistComponent implements OnInit 
 {
   ngolist:any;
-  constructor(private service:NgoService,private router:Router) { }
+  constructor(private service:AdminService,private router:Router) { }
 
   ngOnInit() 
   {
-    let observableResult= this.service.NgoList();
+    let observableResult= this.service.GetAllUsers();
     observableResult.subscribe((result)=>{
       this.ngolist= result;
     })

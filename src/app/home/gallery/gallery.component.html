@@ -1,2 +1,14 @@
 <h1>Photos Of Missing People . . .</h1>
-<h2>To be added soon...</h2>
+<div class="table-responsive">
+    
+        <table class="table table-striped table-hover">
+                <tbody>
+                    <tr *ngFor="let ph of photo">
+              
+                        <td> <img src="data:image/gif;base64,{{ph.img}}" alt="photo" style="height: 200px;width: 200px;"> </td>
+            
+                    </tr>
+                </tbody>
+            </table>
+            
+        </div>

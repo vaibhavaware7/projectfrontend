@@ -8,7 +8,6 @@
                 <th> Name  </th>
                 <th> Role  </th>
                 <th> Email </th>
-                <th> Update</th>
                 <th> Send  </th>
                 <th> Remove</th>
             </tr>
@@ -23,11 +22,6 @@
 
                 <td> {{user.email}} </td>
 
-                <td> 
-                    
-                 <button type="button" class="btn btn-success" (click)="Update(user.uid)">Update</button>
-                    
-                </td>
                 <td> 
                         <button type="button" class="btn btn-success" (click)="SendMessage(user.email)">Send Message</button>
                  </td>

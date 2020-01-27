@@ -19,5 +19,8 @@ export class CommondataService {
     return this.http.post(this.baseUrl+"users/register",god);
   }
 
-
+  GetAllPhotos()
+  {
+    return this.http.get(this.baseUrl+"users/imgs");
+  }
 }

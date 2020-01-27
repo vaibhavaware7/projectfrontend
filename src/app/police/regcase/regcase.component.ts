@@ -11,14 +11,17 @@ export class RegcaseComponent implements OnInit {
 
   god={name:"",age:"",gendor:"",height:"",bgrp:"",dob:"",missingDate:"",complainantNo:"",
   city:"",state:"",country:"",phoneno:""}
+  image:any;
   constructor(private router:Router,private service:PoliceService) { }
-
+  onSelectFile(event) {
+    this.image = event.target.files[0];
+}
   ngOnInit() 
   {
   }
   onRegister()
   {
-   let observableResult= this.service.FileComplaint(this.god);
+   let observableResult= this.service.FileComplaint(this.god,this.image);
    debugger;  
     observableResult.subscribe((result)=>{
       if(result==true)

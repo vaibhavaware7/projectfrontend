@@ -9,6 +9,11 @@ export class AdminService {
   baseUrl="http://localhost:8080/hatportal/admin/";
   constructor(private http:HttpClient) { }
 
+  GetUserById(uid)
+  {
+    return this.http.get(this.baseUrl+"users/"+uid)
+  
+  }
   GetAllUsers()
   {
     return this.http.get(this.baseUrl+"users");
@@ -50,8 +55,14 @@ export class AdminService {
   {
     return this.http.get(this.baseUrl+"verify/"+uid);
   }
-  GetUser(name)
+  GetUser(email)
   {
-    return this.http.get(this.baseUrl+"user/"+name);
+    debugger;
+    return this.http.get(this.baseUrl+"user/"+email);
+  }
+  Reject(uid)
+  {
+    return this.http.get(this.baseUrl+"reject/"+uid);
+    
   }
 }

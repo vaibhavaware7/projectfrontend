@@ -30,6 +30,12 @@
           <label for="">Date Of Birth(yyyy-MM-dd)</label>
           <input [(ngModel)]="god.dob" type="text" class="form-control">
         </div>
+       <div class="form-group">
+         <label for="Profile Picture"><b>Profile Picture</b></label>
+        <input (change)="onSelectFile($event)" style="border: none" type="file" class="form-control">
+
+        </div>
+     
         
       </div>
   <div class="col-md-4">

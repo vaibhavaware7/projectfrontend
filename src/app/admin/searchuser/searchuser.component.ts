@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class SearchuserComponent implements OnInit {
 
-  name:any;
+  email:any;
   god:any;
   constructor(private service :AdminService,private router:Router) { }
 
@@ -19,7 +19,7 @@ export class SearchuserComponent implements OnInit {
   }
   onSearch()
   {
-    let observableResult= this.service.GetUser(this.name);
+    let observableResult= this.service.GetUser(this.email);
     observableResult.subscribe((result)=>{
       console.log(result);
       if(isNull(result))

@@ -8,7 +8,7 @@ import { PoliceService } from 'src/app/police.service';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-  map:any;
+  vic:any;
   username="";
   constructor(private router:Router,private service:PoliceService) { }
 
@@ -24,7 +24,7 @@ export class SearchComponent implements OnInit {
      let obervableResult= this.service.GetCaseByName(this.username);
      obervableResult.subscribe((result)=>{
        console.log(result);
-       this.map=result;
+       this.vic=result;
      })
   }
 }
