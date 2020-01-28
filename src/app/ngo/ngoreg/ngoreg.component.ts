@@ -11,15 +11,16 @@ export class NgoregComponent implements OnInit {
 
   god={name:"",email:"",phoneno:"",city:"",state:"",country:"",password:"",
   deptname:"",deptcity:"",deptstate:"",deptcountry:"",deptphoneno:"",role:"NGO"};
-  
+  image:any;
   constructor(private router:Router,private service:CommondataService) { }
-
+  onSelectFile(event) {
+    this.image = event.target.files[0];}
   ngOnInit() {
   }
 
   onRegister()
   {
-    let observableResult = this.service.Register(this.god);
+    let observableResult = this.service.Register(this.god,this.image);
     observableResult.subscribe((result)=>{
       if(result== true)
       {

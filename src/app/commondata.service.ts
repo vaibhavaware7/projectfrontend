@@ -14,13 +14,21 @@ export class CommondataService {
     return this.http.post(this.baseUrl+"users/login",user);
   }
 
-  Register(god)
+  Register(god,image)
   {
-    return this.http.post(this.baseUrl+"users/register",god);
+    const formData = new FormData();
+    formData.append("god",JSON.stringify(god));
+    formData.append("image",image);
+   
+    return this.http.post(this.baseUrl+"users/register",formData);
   }
 
   GetAllPhotos()
   {
     return this.http.get(this.baseUrl+"users/imgs");
+  }
+  GetDatapoints()
+  {
+    return this.http.get(this.baseUrl+"users/stat");
   }
 }
