@@ -1,7 +1,15 @@
-<h1 style="text-align: center"> Case Registeration Form</h1>
 
+<div class="row" style="background: #092930;color: white;">
+    <div class="col-md-12">
+    <div class="form-group" style="text-align: center;">
+        <h1 style="text-align: center"> Case Registeration Form</h1>
+  </div>
+  </div>
+  </div>
+  <br>
 <div class="row" >
-  <div class="col-md-5">
+  <div class="col-md-1"> </div>
+  <div class="col-md-5" style="text-align: left;">
       <div class="form-group">
           <label for="">Full Name</label>
           <input [(ngModel)]="god.name" type="text" class="form-control">
@@ -38,7 +46,7 @@
      
         
       </div>
-  <div class="col-md-4">
+  <div class="col-md-5" style="text-align: left;">
     <div class="form-group">
       <label for="">City</label>
       <input [(ngModel)]="god.city" type="text" class="form-control">
@@ -67,7 +75,7 @@
    </div>
 </div>
 <div class="row">
-  <div class="col-md-9">
+  <div class="col-md-12">
   <div class="form-group" style="text-align: center;">
     <button (click)="onRegister()" class="btn btn-success">Register</button>
 </div>

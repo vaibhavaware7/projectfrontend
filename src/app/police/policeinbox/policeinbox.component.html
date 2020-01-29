@@ -1,16 +1,29 @@
-<h1>List Of all Messages Received</h1>
+<div class="row" style="background: #092930;color: white;">
+        <div class="col-md-12">
+        <div class="form-group" style="text-align: center;">
+            <h1 style="text-align: center">Messages</h1>
+      </div>
+      </div>
+      </div>
+      <br>
+<div class="row">
+    <div class="col-md-1">
 
-<div class="table-responsive">
-    <table>
-    <tr>
-            <th> Messages </th>
-    </tr>
-    <tr *ngFor="let msgs of msglist">
-        <td>
-            <div class="container-fluid">        
-                <textarea name="msg" id="input" class="form-control" rows="5">{{msgs.msg}}</textarea>   
-            </div>
-        </td>
-    </tr>
-    </table>
+    </div>
+    <div class="col-md-11">
+            <div class="table-responsive">
+                    <table>
+                    <tr>
+                            <th> Messages </th>
+                    </tr>
+                    <tr *ngFor="let msgs of msglist">
+                        <td>
+                            <div class="container-fluid">        
+                                <textarea style="width:700px" name="msg" id="input" class="form-control" rows="5">{{msgs.msg}}</textarea>   
+                            </div>
+                        </td>
+                    </tr>
+                    </table>
+                </div>
+        </div>
 </div>

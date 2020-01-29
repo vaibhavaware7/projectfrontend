@@ -1,22 +1,32 @@
 <br>
-<div class="container" style="background-color: cornflowerblue; width: 96%;
+<div class="container-fluid" style=" width: 100%;height: 150px;" >
+    <div class="row">
+     <div class="col-md-1">
+       <img src="assets/logo.jpg" style="height: 150px;width: 120px;">
+     </div>
+     <div class="col-md-10" style="font-family:'Times New Roman', Times, serif ;">
+       <h1 style="font-weight: 600;">NATIONAL HUMAN RIGHTS COMMISSION, INDIA</h1>
+       <h2>Human Anti-Trafficking Portal</h2>
+     </div>
+     <div class="col-md-1">
+
+     </div>
+     <input type="button" class="btn btn-danger" value="logout" (click)="logout()">
+    </div>
+    
+   </div>
+<!-- <div class="container" style="background-color: cornflowerblue; width: 96%;
  height: 130px;" >
  <h1>Government Of India</h1>
  <h2>Anti-Trafficking Portal</h2>
 
  <input type="button" class="btn btn-danger" value="logout" (click)="logout()" 
  style="position: absolute; top: 30px;left: 1200px;" >  
-</div>
+</div> -->
 <br>
-<nav class="navbar " style="left: 2%; width: 96%;background:lightblue;">
+<nav class="navbar " style="left: 2%; width: 97%;background:#0f1629;">
         <div class="container-fluid">
-           <div class="navbar-header">
-             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>                        
-            </button> 
-          </div> 
+           
           <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
               <li class="active"><a routerLink="/policehome/police">Home</a></li>
@@ -41,20 +51,18 @@
         
       <div class="container-fluid text-center">    
         <div class="row content">
-          <div class="col-md-3 sidenav">
-            
-            <div class="jumbotron" style="text-align: left;">
-              <h2>News</h2>
-              <p> Contents to be added... </p>
-              </div>
-           </div>
-          <div class="col-md-9 text-left"> 
-                <router-outlet></router-outlet>
+          <div class="col-md-12 ">
+              <router-outlet></router-outlet>
           </div>
-    <div class="col-md-12">   
-      <footer class="container-fluid text-center">
-        <p>This portal is developed for CDAC project by Vaibhav Aware</p>
-      </footer>
-    </div>
+        </div>
+      </div>
 
+   
+      <div class="row" style="background: #051e2e;">
+          <div class="col-md-12">
+              <footer class="container-fluid text-center">
+                  <p style="color: white;">This portal is developed for CDAC project by Vaibhav Aware</p>
+              </footer>            
+          </div>  
+          </div>
 

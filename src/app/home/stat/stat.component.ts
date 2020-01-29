@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import * as CanvasJS from '../../../assets/js files/canvasjs.min';
 import { CommondataService } from 'src/app/commondata.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-stat',
   templateUrl: './stat.component.html',
@@ -12,7 +13,7 @@ export class StatComponent implements OnInit {
   data:any;
    y1 :any;
   y2:any;
-  constructor(private service:CommondataService) { }
+  constructor(private service:CommondataService,private router:Router) { }
 
   ngOnInit() {
           
@@ -51,6 +52,9 @@ export class StatComponent implements OnInit {
        missingPeopleColumnChart.render();
     }
     } 
+    Home(){
+      this.router.navigate(['/home'])
+    }
   }
 
 

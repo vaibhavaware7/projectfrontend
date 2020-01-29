@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./police.component.css']
 })
 export class PoliceComponent implements OnInit {
-
+name:any;
   constructor() { }
 
   ngOnInit() {
+    this.name=localStorage.getItem('name');
   }
 
 }

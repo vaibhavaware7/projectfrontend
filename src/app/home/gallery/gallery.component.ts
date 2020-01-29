@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommondataService } from 'src/app/commondata.service';
 import { isNull } from 'util';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-gallery',
@@ -10,7 +11,7 @@ import { isNull } from 'util';
 export class GalleryComponent implements OnInit {
 
   photo:any;
-  constructor(private service:CommondataService) { }
+  constructor(private service:CommondataService,private router:Router) { }
 
   ngOnInit() 
   {
@@ -25,5 +26,8 @@ export class GalleryComponent implements OnInit {
       }
     })
   }
-
+  Home()
+  {
+    this.router.navigate(['/home'])
+  }
 }
