@@ -16,6 +16,7 @@ export class CommondataService {
 
   Register(god,image)
   {
+    debugger;
     const formData = new FormData();
     formData.append("god",JSON.stringify(god));
     formData.append("image",image);
@@ -30,5 +31,10 @@ export class CommondataService {
   GetDatapoints()
   {
     return this.http.get(this.baseUrl+"users/stat");
+  }
+  GenerateOtp(email)
+  {
+    return this.http.get(this.baseUrl+"users/generate/"+email);
+    
   }
 }
